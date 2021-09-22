@@ -56,10 +56,18 @@
 
 ### Transaction process
 
-1. **Signing**: Sign the transaction with your private key, create a hash from the transaction input.
+![Sending Transaction](img/sending-transaction.png)
+
+1. **Select IOTA Network**: Choose a node that is going to be the entry point to the Tangle, IOTA networks can be private (Hornet) or permissionless (Mainnet, Devnet, Comnet)
+
 
 1. **Unconfirmed transactions selection (tips)**: MCMC (Markov chain Monte Carlo) is used to randomly select two unconfirmed transactions, which will be referenced by your transaction.
 
 1. **Proof of Work**: Prevent **double spend attack**, (send a fake transaction record to the destinatary while keeping the original amount due to the long confirmation time, or sending multiple packets to the network after receiving the counterparty’s assets or services, thus keeping both the received goods and the sent amount) This process makes any attempt to duplicate or falsify the blockchain significantly more difficult to execute, because the attacker would have to go back and re-mine every single block with the new fraudulent transaction(s) on it. 
+1. **Broadcast transaction to the network**: Broadcast the transaction to the network, someone chooses your transaction in the tip selection and validates it, then your transaction is confirmed.
 
-1. **Broadcast transaction to the network**: Your transaction is broadcasted to the network, someone chooses your transaction in the tip selection and validates it, then your transaction is confirmed.
+
+### Definitions
+
+##### Minimum Weight Magnitude (MWM)
+A setting for proof of work that defines the number of trailing zeros that a transaction hash must have to be accepted by nodes in an IOTA network
