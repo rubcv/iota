@@ -6,4 +6,9 @@ print(dir(iota_client))
 
 print("Connecting to testnet client")
 # client will connect to testnet by default
-client = iota_client.Client()print(client.get_info())
+client = iota_client.Client()
+
+if client.get_health():
+    print(client.get_info())
+else:
+    print("Testnet not healthy")
