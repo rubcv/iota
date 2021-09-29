@@ -1,15 +1,19 @@
-# IOTA
-#### Table of Contents
+# Attendance checker for any meeting using the IOTA Tangle
+### Table of Contents
 1. [About this project](#about-this-project)
 1. [What is IOTA](#what-is-iota)
 
-## About this project
+### About this project
+System that checks the attendance to any meeting based on transactions realized in the IOTA Tangle network.
+
+This system benefits from the feeless IOTA network and the better scalability that IOTA provides when increasing the number of transactions. 
+Refer to: [What is IOTA](#what-is-iota)
 
 ![Diagram](img/diagram.png)
 
-## What is IOTA
+### What is IOTA
 
-#### Main issues with a common Blockchain Network (e.g. Bitcoin)
+Main issues with a common Blockchain Network (e.g. Bitcoin)
 
 
 1. **Scalability**
@@ -41,29 +45,29 @@
 
     * A quantum computer is 17 billion times more efficient in calculating a hash (51% control of the network attack).
 
-## IOTA
-#### IOTA uses a DAG (Directed Acyclic Graph)
+
+##### IOTA uses a DAG (Directed Acyclic Graph)
 
 ![DAG](img/dag-vs-blockchain.png)
 
 * High transaction throughput (paralellizing transaction validations).
 * More participants -> less confirmation time.
 
-#### No miners
+##### No miners
 
 * Blockchain: Participants of the network decoupled into miners and users, miners compete with each other and users only send/receive transactions (centralization can occur, mining pools).
 
 * IOTA: A transaction validates two past transactions, members are both participants of the consensus and users.
 
-#### No transaction fees
+##### No transaction fees
 
 * All the network is involved in the approval of transactions (not only a small subset part of the consensus (only miners)), as a result the consensus is not decoupled from the transaction make process, hence no need to pay fees.
 
-#### Quantum computer resistant
+##### Quantum computer resistant
 
 * Uses winternitz one time signature.
 
-### Transaction process (IOTA v1.1)
+#### Transaction process (IOTA v1.1)
 
 ![Sending Transaction](img/sending-transaction.png)
 
@@ -85,18 +89,18 @@ Nodes vote on new conflicts through our voting protocol, FPC, which determines w
 
 >**Note**: this process is used in IOTA DevNet ver 2.0, fully decentralized https://v2.iota.org/how-it-works/decentralized
 
-### Definitions
+#### Definitions
 
-##### Minimum Weight Magnitude (MWM)
+**Minimum Weight Magnitude (MWM)**
 A setting for proof of work that defines the number of trailing zeros that a transaction hash must have to be accepted by nodes in an IOTA network
 
-##### Double Spend Attack 
+**Double Spend Attack**
 Send a fake transaction record to the destinatary while keeping the original amount due to the long confirmation time, or sending multiple packets to the network after receiving the counterparty’s assets or services, thus keeping both the received goods and the sent amount) This process makes any attempt to duplicate or falsify the blockchain significantly more difficult to execute, because the attacker would have to go back and re-mine every single block with the new fraudulent transaction(s) on it. 
 
-##### Coordinator and Milestones (IOTA v1.1)
+**Coordinator and Milestones (IOTA v1.1)**
 Transactions in the Tangle are confirmed by special transactions called milestones that are sent by a client called the Coordinator, removed and fully decentralized in v2.0.
 
-##### Proof of Work Remote/Local, Transaction bundle
+**Proof of Work Remote/Local, Transaction bundle**
 In the transaction process: 
 * First, we construct a **transaction bundle**. The bundle groups together all the individual transactions which relate to a single intent of value transfer. The constructed bundle is signed with your private keys.
 * Second, we randomly choose two previous unapproved transactions, or tips to approve. This will allow us to join the Tangle. We can get two tips from IRI via *getTransactionsToApprove*.
@@ -104,7 +108,7 @@ In the transaction process:
 
 The Proof of Work can be done on the device locally or it can be delegated to external devices.
 
-##### IRI
+**IRI**
 The IRI (**IOTA Reference Implementation**) is open-source Java software that runs on the IOTA Mainnet as well as the Devnet. This software defines the current IOTA protocol, which allows nodes to do the following:
 
 * Validate transactions
@@ -112,6 +116,6 @@ The IRI (**IOTA Reference Implementation**) is open-source Java software that ru
 * Allow clients to interact with the them through a an HTTP API
 
 
-### More IOTA v2.0 documentation
+#### More IOTA v2.0 documentation
 https://github.com/iotaledger/IOTA-2.0-Research-Specifications
 
