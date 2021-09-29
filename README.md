@@ -1,4 +1,13 @@
 # IOTA
+#### Table of Contents
+1. [About this project](#about-this-project)
+1. [What is IOTA](#what-is-iota)
+
+## About this project
+
+![Diagram](img/diagram.png)
+
+## What is IOTA
 
 #### Main issues with a common Blockchain Network (e.g. Bitcoin)
 
@@ -86,6 +95,22 @@ Send a fake transaction record to the destinatary while keeping the original amo
 
 ##### Coordinator and Milestones (IOTA v1.1)
 Transactions in the Tangle are confirmed by special transactions called milestones that are sent by a client called the Coordinator, removed and fully decentralized in v2.0.
+
+##### Proof of Work Remote/Local, Transaction bundle
+In the transaction process: 
+* First, we construct a **transaction bundle**. The bundle groups together all the individual transactions which relate to a single intent of value transfer. The constructed bundle is signed with your private keys.
+* Second, we randomly choose two previous unapproved transactions, or tips to approve. This will allow us to join the Tangle. We can get two tips from IRI via *getTransactionsToApprove*.
+* Third, is Proof of Work(PoW). To join Tangle every transaction in the bundle requires a nonce. The nonce is the result of PoW.
+
+The Proof of Work can be done on the device locally or it can be delegated to external devices.
+
+##### IRI
+The IRI (**IOTA Reference Implementation**) is open-source Java software that runs on the IOTA Mainnet as well as the Devnet. This software defines the current IOTA protocol, which allows nodes to do the following:
+
+* Validate transactions
+* Store valid transactions in a ledger
+* Allow clients to interact with the them through a an HTTP API
+
 
 ### More IOTA v2.0 documentation
 https://github.com/iotaledger/IOTA-2.0-Research-Specifications
