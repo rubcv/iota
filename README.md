@@ -11,6 +11,27 @@ Refer to: [What is IOTA](#what-is-iota)
 
 ![Diagram](img/diagram.png)
 
+#### Install
+
+**Requirements**
+* Docker
+* Docker Compose
+* Python v3.9
+* Flask
+
+1. Build the Docker image
+
+    ```bash
+    docker build -t iota-api:v0.0.1 . 
+    ```
+
+1. Run the Docker image
+
+    ```bash
+    docker run -d --name iota-api --restart always -p 5000:5000 iota-api:v0.0.1 
+    ```
+
+
 ### What is IOTA
 
 Main issues with a common Blockchain Network (e.g. Bitcoin)
