@@ -1,11 +1,24 @@
-import flask
+from flask import Flask, request, jsonify
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 app.config["DEBUG"] = True
 
 
-@app.route('/', methods=['GET'])
-def home():
-    return "<h1>Distant Reading Archive</h1><p>This site is a prototype API for distant reading of science fiction novels.</p>"
+@app.route('/api/v1/send', methods=['POST'])
+def send():
+    # Send the transaction to the Tangle
+    return request.json
 
-app.run()
+@app.route('/api/v1/meeting/<id>', methods=['GET'])
+def get_meeting(id):
+    # Query from the Tangle
+    return id
+
+
+@app.route('/api/v1/user/<id>', methods=['GET'])
+def get_user(id):
+    # Query from the Tangle
+    return id
+
+# Accept connections from outside Docker
+app.run(host="0.0.0.0")

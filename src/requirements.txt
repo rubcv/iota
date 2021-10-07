@@ -1,6 +1,5 @@
 Flask==2.0.1
-html5lib==1.1
-importlib-metadata==4.8.1
+iota
 PyOTA==2.1.0
 PyOTA-CCurl==1.0.9
 PyOTA-PoW==1.1.0

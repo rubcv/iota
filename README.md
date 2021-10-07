@@ -31,6 +31,26 @@ Refer to: [What is IOTA](#what-is-iota)
     docker run -d --name iota-api --restart always -p 5000:5000 iota-api:v0.0.1 
     ```
 
+#### API Endpoints
+
+* Send a transaction
+    > POST /api/v1/send
+
+    body:
+    ```json
+    {
+    "meeting_id": "1234",
+    "description" : "Fundamentals of IOTA",
+    "user_id" : "555",
+    "username" : "Ruben",
+    "timestamp" : "07/10/2021 - 11:53:45"
+    }
+    ```
+* Query by meeting ID
+    > GET /api/v1/meeting/{id}
+
+* Query by user ID
+    > GET /api/v1/user/{id}
 
 ### What is IOTA
 
