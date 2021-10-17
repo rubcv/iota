@@ -1,5 +1,6 @@
 Flask==2.0.1
-iota
 PyOTA==2.1.0
 PyOTA-CCurl==1.0.9
 PyOTA-PoW==1.1.0
+python-rocksdb-iota>=0.7.2
+pyota>=2.0.1

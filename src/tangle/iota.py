@@ -1,9 +1,8 @@
-
-from iota import Iota, TryteString, Address, Tag, ProposedTransaction
+from iota import iota, TryteString, Address, Tag, ProposedTransaction
 from pprint import pprint
 
 # Declare an API object
-api = Iota('https://nodes.devnet.iota.org:443', devnet=True)
+api = iota('https://nodes.devnet.iota.org:443', devnet=True)
 
 # Prepare custom data
 my_data = TryteString.from_unicode('Hello from the Tangle!')
